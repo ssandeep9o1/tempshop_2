@@ -1,21 +1,23 @@
 package org.example.tempshop.dto.adminDto;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.tempshop.entity.Category;
 
 
 @Getter
 @Setter
 public class AddItemDto {
 
-    private String item_name;
+    @NotBlank(message = "Item name cannot be blank")
+    private String itemName;
 
-    private double item_price;
+    @NotNull(message = "Item category cannot be blank")
+    private Long categoryId;
 
-    private Category category;
-
+    @Min(0)
     private int stocks;
 
-    private String image;
 }

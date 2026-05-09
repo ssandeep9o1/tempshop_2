@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.tempshop.enums.OrderStatus;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -13,9 +14,9 @@ import java.util.List;
 public class Orders extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long order_id;
+    private Long orderId;
     private Long token;
-    private double total;
+    private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;

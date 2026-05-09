@@ -3,7 +3,6 @@ package org.example.tempshop.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.tempshop.enums.ItemStatus;
 
 import java.util.List;
 
@@ -13,13 +12,12 @@ import java.util.List;
 public class Items {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long item_id;
+    private Long itemId;
 
-    private String item_name;
+    private String itemName;
+
     private int stocks;
 
-    @Enumerated(EnumType.STRING)
-    private ItemStatus availability;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")

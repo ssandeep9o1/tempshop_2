@@ -11,7 +11,7 @@ import org.example.tempshop.enums.PaymentStatus;
 public class Transactions extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transaction_id;
+    private Long transactionId;
 
     @Enumerated(EnumType.STRING)
     private PaymentStatus status;

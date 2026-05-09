@@ -11,11 +11,11 @@ import lombok.Setter;
 public class Payments extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long payment_id;
+    private Long paymentId;
 
     @OneToOne
     @JoinColumn(name = "order_id")
     private Orders order;
 
-    private String payment_type;
+    private String paymentType;
 }
