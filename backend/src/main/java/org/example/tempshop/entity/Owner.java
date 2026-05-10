@@ -9,10 +9,10 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Owner {
+public class Owner extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long owner_id;//shop owner.
+    private Long ownerId;//shop owner.
     private String name;
     private String contact;
     private String shopName;

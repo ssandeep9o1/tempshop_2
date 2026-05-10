@@ -11,15 +11,15 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class ItemsSize {
+public class ItemsSize extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long item_size_id;
+    private Long itemSizeId;
 
     @Enumerated(EnumType.STRING)
     private ItemSize size;
 
-    private BigDecimal price_per_size;
+    private BigDecimal pricePerSize;
 
     @ManyToOne
     @JoinColumn(name = "item_id")

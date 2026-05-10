@@ -5,15 +5,17 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
 public class OrderItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long order_items_id;
-    private int order_quantity;
-    private double sub_total;
+    private Long orderItemsId;
+    private int orderQuantity;
+    private BigDecimal subTotal;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
@@ -21,9 +23,6 @@ public class OrderItems {
 
     @ManyToOne
     @JoinColumn(name = "item_size_id")
-     private ItemsSize itemsSize;
+    private ItemsSize itemsSize;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    private Items items;
 }

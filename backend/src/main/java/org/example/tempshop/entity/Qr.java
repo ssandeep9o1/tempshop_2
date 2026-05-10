@@ -10,8 +10,8 @@ import lombok.Setter;
 public class Qr {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long qr_id;
-    private String qr_image;
+    private Long qrId;
+    private String qrImage;
 
     @OneToOne
     @JoinColumn(name = "owner_id")
