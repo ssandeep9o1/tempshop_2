@@ -1,4 +1,4 @@
-package org.example.tempshop.dtos.adminDto;
+package org.example.tempshop.dtos.requestDto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

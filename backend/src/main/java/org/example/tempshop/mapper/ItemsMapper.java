@@ -1,6 +1,6 @@
 package org.example.tempshop.mapper;
 
-import org.example.tempshop.dtos.adminDto.AddItemDto;
+import org.example.tempshop.dtos.requestDto.AddItemDto;
 import org.example.tempshop.entity.Items;
 import org.mapstruct.Mapper;
 
