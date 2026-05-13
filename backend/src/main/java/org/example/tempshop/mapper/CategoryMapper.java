@@ -1,6 +1,6 @@
 package org.example.tempshop.mapper;
 
-import org.example.tempshop.dto.adminDto.AddCategoryDto;
+import org.example.tempshop.dtos.adminDto.AddCategoryDto;
 import org.example.tempshop.entity.Category;
 import org.mapstruct.Mapper;
 

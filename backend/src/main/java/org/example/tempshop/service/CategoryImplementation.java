@@ -1,7 +1,7 @@
 package org.example.tempshop.service;
 
 import jakarta.transaction.Transactional;
-import org.example.tempshop.dto.adminDto.AddCategoryDto;
+import org.example.tempshop.dtos.adminDto.AddCategoryDto;
 import org.example.tempshop.entity.Category;
 import org.example.tempshop.mapper.CategoryMapper;
 import org.example.tempshop.repository.CategoryRepository;
@@ -38,4 +38,6 @@ public class CategoryImplementation implements CategoryService{
 
         return "Category added successfully";
     }
+
+    
 }

@@ -41,7 +41,7 @@ export default function CategoryForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block mb-2 font-medium">
-              Category Name
+              Category Name : 
             </label>
 
             <input
