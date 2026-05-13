@@ -1,7 +1,7 @@
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\controller\CategoryController.java
-C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dto\adminDto\AddCategoryDto.java
-C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dto\adminDto\AddItemDto.java
-C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dto\OwnerDto.java
+C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dtos\adminDto\AddCategoryDto.java
+C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dtos\adminDto\AddItemDto.java
+C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\dtos\exceptionDto\ExceptionResponse.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\entity\BaseModel.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\entity\Category.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\entity\Items.java
@@ -15,6 +15,7 @@ C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\e
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\enums\ItemSize.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\enums\OrderStatus.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\enums\PaymentStatus.java
+C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\exceptions\CategoryNotFoundException.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\exceptions\GlobalException.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\mapper\CategoryMapper.java
 C:\Users\sathwik\Desktop\tempshop_2\backend\src\main\java\org\example\tempshop\mapper\ItemsMapper.java

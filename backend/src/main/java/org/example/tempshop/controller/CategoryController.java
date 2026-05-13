@@ -1,7 +1,7 @@
 package org.example.tempshop.controller;
 
 import jakarta.validation.Valid;
-import org.example.tempshop.dto.adminDto.AddCategoryDto;
+import org.example.tempshop.dtos.adminDto.AddCategoryDto;
 import org.example.tempshop.service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,4 +22,5 @@ public class CategoryController {
         String response = categoryService.createCategory(addCategoryDto);
         return ResponseEntity.ok(response);
     }
+
 }
