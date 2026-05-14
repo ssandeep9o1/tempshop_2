@@ -28,7 +28,9 @@ public class CategoryImplementation implements CategoryService{
     @Override
     @Transactional
     public String createCategory(AddCategoryDto addCategoryDto) {
+
         String normalized = addCategoryDto.getCategoryType().toLowerCase().trim();
+
         Optional<Category> existingCategory = categoryRepository.findByCategoryType(normalized);
 
         if(existingCategory.isPresent()){
@@ -70,6 +72,39 @@ public class CategoryImplementation implements CategoryService{
 
 
         return  categoryMapper.mapFromCategory(category);
+    }
+
+    @Override
+    @Transactional
+    public CategoryResponse updateCategoryById(Long id) {
+        if(id < 1){
+            throw new InvalidCategoryId("Invalid id given");
+        }
+
+        Category category = categoryRepository.findById(id).
+                orElseThrow(() ->
+                        new CategoryNotFoundException("No category present for the given id : " + id));
+
+
+
+
+
+        return null;
+    }
+
+    @Override
+    public String deleteCategoryById(Long id) {
+        if(id < 1){
+            throw new InvalidCategoryId("Invalid id given");
+        }
+
+        Category category = categoryRepository.findById(id).
+                orElseThrow(() ->
+                        new CategoryNotFoundException("No category present for the given id : " + id));
+
+        categoryRepository.delete(category);
+
+        return "Deleted successfully";
     }
 
 

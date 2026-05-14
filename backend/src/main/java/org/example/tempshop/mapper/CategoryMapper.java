@@ -10,4 +10,6 @@ public interface CategoryMapper {
     Category mapToCategory(AddCategoryDto addCategoryDto);
 
     CategoryResponse mapFromCategory(Category category);
+
+
 }

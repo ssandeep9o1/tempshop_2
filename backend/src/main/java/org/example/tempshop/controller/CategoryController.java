@@ -26,7 +26,7 @@ public class CategoryController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/allCategories")
+    @GetMapping
     public ResponseEntity<List<CategoryResponse>> allCategory(){
         List<CategoryResponse> categoryResponses = categoryService.fetchAllCategories();
         return ResponseEntity.ok(categoryResponses);
@@ -35,6 +35,18 @@ public class CategoryController {
     @GetMapping("/{id}")
     public ResponseEntity<CategoryResponse> getCategoryById(@PathVariable Long id){
         CategoryResponse response = categoryService.fetchCategoryById(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CategoryResponse> updateById(@PathVariable Long id){
+        CategoryResponse response = categoryService.fetchCategoryById(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable Long id){
+        String response = categoryService.deleteCategoryById(id);
         return ResponseEntity.ok(response);
     }
 
