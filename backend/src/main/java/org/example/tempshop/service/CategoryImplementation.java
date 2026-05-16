@@ -62,7 +62,7 @@ public class CategoryImplementation implements CategoryService{
     @Override
     public CategoryResponse fetchCategoryById(Long id) {
 
-        if(id < 1){
+        if(id == null || id <= 0){
             throw new InvalidCategoryId("Invalid id given");
         }
 
@@ -76,8 +76,16 @@ public class CategoryImplementation implements CategoryService{
 
     @Override
     @Transactional
-    public CategoryResponse updateCategoryById(Long id) {
-        if(id < 1){
+    public CategoryResponse updateCategoryById(Long id, AddCategoryDto addCategoryDto) {
+        String normalized = addCategoryDto.getCategoryType().toLowerCase().trim();
+        Optional<Category> existing =
+                categoryRepository.findByCategoryType(normalized);
+
+        if(existing.isPresent() && !existing.get().getId().equals(id)){
+            throw new RuntimeException("Category already exists");
+        }
+
+        if(id == null || id <= 0){
             throw new InvalidCategoryId("Invalid id given");
         }
 
@@ -86,15 +94,18 @@ public class CategoryImplementation implements CategoryService{
                         new CategoryNotFoundException("No category present for the given id : " + id));
 
 
+        addCategoryDto.setCategoryType(normalized);
 
+        categoryMapper.updateCategoryFromResponse(addCategoryDto, category);
+        Category savedCategory = categoryRepository.save(category);
 
-
-        return null;
+        return categoryMapper.mapFromCategory(savedCategory);
     }
 
     @Override
+    @Transactional
     public String deleteCategoryById(Long id) {
-        if(id < 1){
+        if(id == null || id <= 0){
             throw new InvalidCategoryId("Invalid id given");
         }
 
