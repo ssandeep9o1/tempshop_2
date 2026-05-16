@@ -13,7 +13,7 @@ public interface CategoryService {
 
     public CategoryResponse fetchCategoryById(Long id);
 
-    public CategoryResponse updateCategoryById(Long id);
+    public CategoryResponse updateCategoryById(Long id, AddCategoryDto addCategoryDto);
 
     public String deleteCategoryById(Long id);
 }
