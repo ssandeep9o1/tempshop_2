@@ -10,4 +10,5 @@ public class AddCategoryDto {
 
     @NotBlank(message = "Category name cannot be null")
     private String categoryType;
+
 }

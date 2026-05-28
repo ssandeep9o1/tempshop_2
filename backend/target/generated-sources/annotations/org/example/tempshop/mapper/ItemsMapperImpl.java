@@ -1,29 +1,63 @@
 package org.example.tempshop.mapper;
 
 import javax.annotation.processing.Generated;
-import org.example.tempshop.dtos.requestDto.AddItemDto;
+import org.example.tempshop.dtos.responceDto.ItemResponse;
+import org.example.tempshop.entity.Category;
 import org.example.tempshop.entity.Items;
+import org.example.tempshop.entity.Owner;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-05-14T12:59:06+0530",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 24.0.2 (Oracle Corporation)"
+    date = "2026-05-18T15:48:25+0530",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 25.0.2 (Oracle Corporation)"
 )
 @Component
 public class ItemsMapperImpl implements ItemsMapper {
 
     @Override
-    public Items addItemsRequest(AddItemDto add) {
-        if ( add == null ) {
+    public ItemResponse toResponse(Items item) {
+        if ( item == null ) {
             return null;
         }
 
-        Items items = new Items();
+        ItemResponse itemResponse = new ItemResponse();
 
-        items.setItemName( add.getItemName() );
-        items.setStocks( add.getStocks() );
+        itemResponse.setOwnerId( itemOwnerOwnerId( item ) );
+        itemResponse.setCategoryId( itemCategoryId( item ) );
+        itemResponse.setItemName( item.getItemName() );
+        itemResponse.setStocks( item.getStocks() );
 
-        return items;
+        return itemResponse;
+    }
+
+    private Long itemOwnerOwnerId(Items items) {
+        if ( items == null ) {
+            return null;
+        }
+        Owner owner = items.getOwner();
+        if ( owner == null ) {
+            return null;
+        }
+        Long ownerId = owner.getOwnerId();
+        if ( ownerId == null ) {
+            return null;
+        }
+        return ownerId;
+    }
+
+    private Long itemCategoryId(Items items) {
+        if ( items == null ) {
+            return null;
+        }
+        Category category = items.getCategory();
+        if ( category == null ) {
+            return null;
+        }
+        Long id = category.getId();
+        if ( id == null ) {
+            return null;
+        }
+        return id;
     }
 }
