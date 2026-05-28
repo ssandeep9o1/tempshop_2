@@ -6,7 +6,6 @@ import org.example.tempshop.dtos.responceDto.CategoryResponse;
 import java.util.List;
 
 public interface CategoryService {
-
     public String createCategory(AddCategoryDto addCategoryDto);
 
     public List<CategoryResponse> fetchAllCategories();

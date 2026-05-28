@@ -12,8 +12,11 @@ org\example\tempshop\enums\ItemSize.class
 org\example\tempshop\repository\CategoryRepository.class
 org\example\tempshop\service\CategoryService.class
 org\example\tempshop\mapper\CategoryMapper.class
+org\example\tempshop\controller\ItemController.class
+org\example\tempshop\service\ItemService.class
 org\example\tempshop\exceptions\GlobalException.class
 org\example\tempshop\entity\Payments.class
+org\example\tempshop\dtos\responceDto\ItemResponse.class
 org\example\tempshop\mapper\ItemsMapperImpl.class
 org\example\tempshop\entity\OrderItems.class
 org\example\tempshop\entity\Owner.class
@@ -22,6 +25,7 @@ org\example\tempshop\entity\Transactions.class
 org\example\tempshop\entity\Qr.class
 org\example\tempshop\repository\ItemsRepository.class
 org\example\tempshop\exceptions\CategoryNotFoundException.class
+org\example\tempshop\service\ItemServiceImp.class
 org\example\tempshop\mapper\CategoryMapperImpl.class
 org\example\tempshop\entity\Category.class
 org\example\tempshop\exceptions\InvalidCategoryId.class
